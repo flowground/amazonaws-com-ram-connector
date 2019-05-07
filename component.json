@@ -1,0 +1,312 @@
+{
+    "title": "AWS Resource Access Manager",
+    "description": "<p>Use AWS Resource Access Manager to share AWS resources between AWS accounts. To share a resource, you create a resource share, associate the resource with the resource share, and specify the principals that can access the resource. The following principals are supported:</p> <ul> <li> <p>The ID of an AWS account</p> </li> <li> <p>The Amazon Resource Name (ARN) of an OU from AWS Organizations</p> </li> <li> <p>The Amazon Resource Name (ARN) of an organization from AWS Organizations</p> </li> </ul> <p>If you specify an AWS account that doesn't exist in the same organization as the account that owns the resource share, the owner of the specified account receives an invitation to accept the resource share. After the owner accepts the invitation, they can access the resources in the resource share. An administrator of the specified account can use IAM policies to restrict access resources in the resource share.</p>",
+    "docsUrl": "https://docs.aws.amazon.com/ram/",
+    "url": "https://api.apis.guru/v2/specs/amazonaws.com/ram/2018-01-04/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://ram.amazonaws.com/",
+                    "http://ram.amazonaws.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "hmac": {
+                "label": "Authorization (hmac)",
+                "viewClass": "TextFieldView",
+                "note": "Amazon Signature authorization v4"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "AcceptResourceShareInvitation": {
+            "main": "./lib/actions/AcceptResourceShareInvitation.js",
+            "title": "Accepts an invitation to a resource share from another AWS account.",
+            "description": "Accepts an invitation to a resource share from another AWS account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AcceptResourceShareInvitation.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AssociateResourceShare": {
+            "main": "./lib/actions/AssociateResourceShare.js",
+            "title": "Associates the specified resource share with the specified principals and resources.",
+            "description": "Associates the specified resource share with the specified principals and resources.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AssociateResourceShare.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateResourceShare": {
+            "main": "./lib/actions/CreateResourceShare.js",
+            "title": "Creates a resource share.",
+            "description": "Creates a resource share.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateResourceShare.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteResourceShare": {
+            "main": "./lib/actions/DeleteResourceShare.js",
+            "title": "Deletes the specified resource share.",
+            "description": "Deletes the specified resource share.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteResourceShare.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DisassociateResourceShare": {
+            "main": "./lib/actions/DisassociateResourceShare.js",
+            "title": "Disassociates the specified principals or resources from the specified resource share.",
+            "description": "Disassociates the specified principals or resources from the specified resource share.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DisassociateResourceShare.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "EnableSharingWithAwsOrganization": {
+            "main": "./lib/actions/EnableSharingWithAwsOrganization.js",
+            "title": "Enables resource sharing within your organization.",
+            "description": "Enables resource sharing within your organization.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/EnableSharingWithAwsOrganization.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetResourcePolicies": {
+            "main": "./lib/actions/GetResourcePolicies.js",
+            "title": "Gets the policies for the specifies resources.",
+            "description": "Gets the policies for the specifies resources.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetResourcePolicies.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetResourceShareAssociations": {
+            "main": "./lib/actions/GetResourceShareAssociations.js",
+            "title": "Gets the associations for the specified resource share.",
+            "description": "Gets the associations for the specified resource share.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetResourceShareAssociations.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetResourceShareInvitations": {
+            "main": "./lib/actions/GetResourceShareInvitations.js",
+            "title": "Gets the specified invitations for resource sharing.",
+            "description": "Gets the specified invitations for resource sharing.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetResourceShareInvitations.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetResourceShares": {
+            "main": "./lib/actions/GetResourceShares.js",
+            "title": "Gets the specified resource shares or all of your resource shares.",
+            "description": "Gets the specified resource shares or all of your resource shares.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetResourceShares.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListPrincipals": {
+            "main": "./lib/actions/ListPrincipals.js",
+            "title": "Lists the principals with access to the specified resource.",
+            "description": "Lists the principals with access to the specified resource.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListPrincipals.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListResources": {
+            "main": "./lib/actions/ListResources.js",
+            "title": "Lists the resources that the specified principal can access.",
+            "description": "Lists the resources that the specified principal can access.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListResources.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RejectResourceShareInvitation": {
+            "main": "./lib/actions/RejectResourceShareInvitation.js",
+            "title": "Rejects an invitation to a resource share from another AWS account.",
+            "description": "Rejects an invitation to a resource share from another AWS account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RejectResourceShareInvitation.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TagResource": {
+            "main": "./lib/actions/TagResource.js",
+            "title": "Adds the specified tags to the specified resource share.",
+            "description": "Adds the specified tags to the specified resource share.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TagResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UntagResource": {
+            "main": "./lib/actions/UntagResource.js",
+            "title": "Removes the specified tags from the specified resource share.",
+            "description": "Removes the specified tags from the specified resource share.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UntagResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateResourceShare": {
+            "main": "./lib/actions/UpdateResourceShare.js",
+            "title": "Updates the specified resource share.",
+            "description": "Updates the specified resource share.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateResourceShare.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,93 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "allowExternalPrincipals": {
+                    "description": "Indicates whether principals outside your organization can be associated with a resource share.",
+                    "type": "boolean"
+                },
+                "clientToken": {
+                    "description": "A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name of the resource share.",
+                    "type": "string"
+                },
+                "principals": {
+                    "description": "The principals to associate with the resource share. The possible values are IDs of AWS accounts, the ARN of an OU or organization from AWS Organizations.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "resourceArns": {
+                    "description": "The Amazon Resource Names (ARN) of the resources to associate with the resource share.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "description": "One or more tags.",
+                    "items": {
+                        "description": "Information about a tag.",
+                        "properties": {
+                            "key": {
+                                "description": "The key of the tag.",
+                                "type": "string"
+                            },
+                            "value": {
+                                "description": "The value of the tag.",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
