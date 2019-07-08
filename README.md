@@ -5,7 +5,7 @@
 A generated **flow**ground connector for the AWS Resource Access Manager API (version 2018-01-04).
 
 Generated from: https://api.apis.guru/v2/specs/amazonaws.com/ram/2018-01-04/swagger.json<br/>
-Generated at: 2019-05-07T17:36:08+03:00
+Generated at: 2019-07-08T14:13:15+03:00
 
 ## API Description
 
@@ -17,7 +17,8 @@ Supported authorization schemes:
 - API Key
 ## Actions
 
-### Accepts an invitation to a resource share from another AWS account.
+### AcceptResourceShareInvitation
+> Accepts an invitation to a resource share from another AWS account.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -30,7 +31,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Associates the specified resource share with the specified principals and resources.
+### AssociateResourceShare
+> Associates the specified resource share with the specified principals and resources.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -43,7 +45,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Creates a resource share.
+### CreateResourceShare
+> Creates a resource share.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -56,7 +59,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Deletes the specified resource share.
+### DeleteResourceShare
+> Deletes the specified resource share.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -69,7 +73,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Disassociates the specified principals or resources from the specified resource share.
+### DisassociateResourceShare
+> Disassociates the specified principals or resources from the specified resource share.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -82,7 +87,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Enables resource sharing within your organization.
+### EnableSharingWithAwsOrganization
+> Enables resource sharing within your organization.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -95,11 +101,12 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Gets the policies for the specifies resources.
+### GetResourcePolicies
+> Gets the policies for the specifies resources.<br/>
 
 #### Input Parameters
-* `maxResults` - _optional_ - Pagination limit
-* `nextToken` - _optional_ - Pagination token
+* `maxResults` - _optional_ - Pagination limit<br/>
+* `nextToken` - _optional_ - Pagination token<br/>
 * `X-Amz-Content-Sha256` - _optional_
 * `X-Amz-Date` - _optional_
 * `X-Amz-Algorithm` - _optional_
@@ -108,11 +115,12 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Gets the associations for the specified resource share.
+### GetResourceShareAssociations
+> Gets the associations for the specified resource share.<br/>
 
 #### Input Parameters
-* `maxResults` - _optional_ - Pagination limit
-* `nextToken` - _optional_ - Pagination token
+* `maxResults` - _optional_ - Pagination limit<br/>
+* `nextToken` - _optional_ - Pagination token<br/>
 * `X-Amz-Content-Sha256` - _optional_
 * `X-Amz-Date` - _optional_
 * `X-Amz-Algorithm` - _optional_
@@ -121,11 +129,12 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Gets the specified invitations for resource sharing.
+### GetResourceShareInvitations
+> Gets the specified invitations for resource sharing.<br/>
 
 #### Input Parameters
-* `maxResults` - _optional_ - Pagination limit
-* `nextToken` - _optional_ - Pagination token
+* `maxResults` - _optional_ - Pagination limit<br/>
+* `nextToken` - _optional_ - Pagination token<br/>
 * `X-Amz-Content-Sha256` - _optional_
 * `X-Amz-Date` - _optional_
 * `X-Amz-Algorithm` - _optional_
@@ -134,11 +143,12 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Gets the specified resource shares or all of your resource shares.
+### GetResourceShares
+> Gets the specified resource shares or all of your resource shares.<br/>
 
 #### Input Parameters
-* `maxResults` - _optional_ - Pagination limit
-* `nextToken` - _optional_ - Pagination token
+* `maxResults` - _optional_ - Pagination limit<br/>
+* `nextToken` - _optional_ - Pagination token<br/>
 * `X-Amz-Content-Sha256` - _optional_
 * `X-Amz-Date` - _optional_
 * `X-Amz-Algorithm` - _optional_
@@ -147,11 +157,12 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Lists the principals with access to the specified resource.
+### ListPrincipals
+> Lists the principals with access to the specified resource.<br/>
 
 #### Input Parameters
-* `maxResults` - _optional_ - Pagination limit
-* `nextToken` - _optional_ - Pagination token
+* `maxResults` - _optional_ - Pagination limit<br/>
+* `nextToken` - _optional_ - Pagination token<br/>
 * `X-Amz-Content-Sha256` - _optional_
 * `X-Amz-Date` - _optional_
 * `X-Amz-Algorithm` - _optional_
@@ -160,11 +171,12 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Lists the resources that the specified principal can access.
+### ListResources
+> Lists the resources that the specified principal can access.<br/>
 
 #### Input Parameters
-* `maxResults` - _optional_ - Pagination limit
-* `nextToken` - _optional_ - Pagination token
+* `maxResults` - _optional_ - Pagination limit<br/>
+* `nextToken` - _optional_ - Pagination token<br/>
 * `X-Amz-Content-Sha256` - _optional_
 * `X-Amz-Date` - _optional_
 * `X-Amz-Algorithm` - _optional_
@@ -173,20 +185,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Rejects an invitation to a resource share from another AWS account.
-
-#### Input Parameters
-* `Action` - _required_
-* `Version` - _required_
-* `X-Amz-Content-Sha256` - _optional_
-* `X-Amz-Date` - _optional_
-* `X-Amz-Algorithm` - _optional_
-* `X-Amz-Credential` - _optional_
-* `X-Amz-Security-Token` - _optional_
-* `X-Amz-Signature` - _optional_
-* `X-Amz-SignedHeaders` - _optional_
-
-### Adds the specified tags to the specified resource share.
+### RejectResourceShareInvitation
+> Rejects an invitation to a resource share from another AWS account.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -199,7 +199,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Removes the specified tags from the specified resource share.
+### TagResource
+> Adds the specified tags to the specified resource share.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -212,7 +213,22 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Updates the specified resource share.
+### UntagResource
+> Removes the specified tags from the specified resource share.<br/>
+
+#### Input Parameters
+* `Action` - _required_
+* `Version` - _required_
+* `X-Amz-Content-Sha256` - _optional_
+* `X-Amz-Date` - _optional_
+* `X-Amz-Algorithm` - _optional_
+* `X-Amz-Credential` - _optional_
+* `X-Amz-Security-Token` - _optional_
+* `X-Amz-Signature` - _optional_
+* `X-Amz-SignedHeaders` - _optional_
+
+### UpdateResourceShare
+> Updates the specified resource share.<br/>
 
 #### Input Parameters
 * `Action` - _required_
